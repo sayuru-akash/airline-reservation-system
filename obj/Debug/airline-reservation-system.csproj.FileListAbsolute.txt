@@ -7,3 +7,6 @@ C:\Users\sayur\Documents\GitHub\airline-reservation-system\obj\Debug\airline-res
 C:\Users\sayur\Documents\GitHub\airline-reservation-system\obj\Debug\airline-reservation-system.csproj.CoreCompileInputs.cache
 C:\Users\sayur\Documents\GitHub\airline-reservation-system\obj\Debug\airline-reservation-system.exe
 C:\Users\sayur\Documents\GitHub\airline-reservation-system\obj\Debug\airline-reservation-system.pdb
+C:\Users\sayur\Documents\GitHub\airline-reservation-system\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\sayur\Documents\GitHub\airline-reservation-system\obj\Debug\airline_reservation_system.Form1.resources
+C:\Users\sayur\Documents\GitHub\airline-reservation-system\obj\Debug\airline-reservation-system.csproj.CopyComplete
