@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace airline_reservation_system
 {
-    public partial class Form1 : Form
+    public partial class LoginScreen : Form
     {
-        public Form1()
+        public LoginScreen()
         {
             InitializeComponent();
         }
@@ -21,7 +21,7 @@ namespace airline_reservation_system
         {
             if (txtUsername.Text=="admin"&&txtPassword.Text=="password")
             {
-                new Form2().Show();
+                new MainMenuScreen().Show();
                 this.Hide();
             }
             else if (txtUsername.Text == "" || txtPassword.Text == "")
