@@ -11,13 +11,13 @@ using FontAwesome.Sharp;
 
 namespace airline_reservation_system
 {
-    public partial class Form2 : Form
+    public partial class MainMenuScreen : Form
     {
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
 
-        public Form2()
+        public MainMenuScreen()
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
@@ -86,21 +86,25 @@ namespace airline_reservation_system
         private void AddRes_Click(object sender, EventArgs e)
         {
             ActivateBtn(sender, Color.FromArgb(113, 201, 245));
+            OpenChildForm(new AddResScreen());
         }
 
         private void RescheduleRes_Click(object sender, EventArgs e)
         {
             ActivateBtn(sender, Color.FromArgb(255, 230, 0));
+            OpenChildForm(new RescheduleResScreen());
         }
 
         private void CancelRes_Click(object sender, EventArgs e)
         {
             ActivateBtn(sender, Color.FromArgb(214, 15, 38));
+            OpenChildForm(new CancelResScreen());
         }
 
         private void ViewRes_Click(object sender, EventArgs e)
         {
             ActivateBtn(sender, Color.FromArgb(242, 158, 56));
+            OpenChildForm(new ViewResScreen());
         }
 
         private void Logo_Click(object sender, EventArgs e)
@@ -111,6 +115,7 @@ namespace airline_reservation_system
         private void Reset()
         {
             DisableButton();
+            currentChildForm.Close();
             leftBorderBtn.Visible = false;
             iconCurrentChildForm.IconChar = IconChar.Home;
             iconCurrentChildForm.IconColor = Color.White;
@@ -119,7 +124,7 @@ namespace airline_reservation_system
 
         private void LogOut_Click(object sender, EventArgs e)
         {
-            new Form1().Show();
+            new LoginScreen().Show();
             this.Hide();
         }
     }
