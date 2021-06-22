@@ -36,7 +36,10 @@ namespace airline_reservation_system
             this.CancelRes = new FontAwesome.Sharp.IconButton();
             this.ViewRes = new FontAwesome.Sharp.IconButton();
             this.LogOut = new FontAwesome.Sharp.IconButton();
+            this.Logo = new System.Windows.Forms.PictureBox();
             this.MenuPanel.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuPanel
@@ -56,6 +59,7 @@ namespace airline_reservation_system
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.Logo);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -83,6 +87,7 @@ namespace airline_reservation_system
             this.AddRes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.AddRes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.AddRes.UseVisualStyleBackColor = true;
+            this.AddRes.Click += new System.EventHandler(this.AddRes_Click);
             // 
             // RescheduleRes
             // 
@@ -105,6 +110,7 @@ namespace airline_reservation_system
             this.RescheduleRes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.RescheduleRes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.RescheduleRes.UseVisualStyleBackColor = true;
+            this.RescheduleRes.Click += new System.EventHandler(this.RescheduleRes_Click);
             // 
             // CancelRes
             // 
@@ -127,6 +133,7 @@ namespace airline_reservation_system
             this.CancelRes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CancelRes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.CancelRes.UseVisualStyleBackColor = true;
+            this.CancelRes.Click += new System.EventHandler(this.CancelRes_Click);
             // 
             // ViewRes
             // 
@@ -149,6 +156,7 @@ namespace airline_reservation_system
             this.ViewRes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ViewRes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ViewRes.UseVisualStyleBackColor = true;
+            this.ViewRes.Click += new System.EventHandler(this.ViewRes_Click);
             // 
             // LogOut
             // 
@@ -171,6 +179,18 @@ namespace airline_reservation_system
             this.LogOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.LogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.LogOut.UseVisualStyleBackColor = true;
+            this.LogOut.Click += new System.EventHandler(this.LogOut_Click);
+            // 
+            // Logo
+            // 
+            this.Logo.Image = global::airline_reservation_system.Properties.Resources.airplane_removebg_preview;
+            this.Logo.Location = new System.Drawing.Point(50, 12);
+            this.Logo.Name = "Logo";
+            this.Logo.Size = new System.Drawing.Size(145, 82);
+            this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Logo.TabIndex = 0;
+            this.Logo.TabStop = false;
+            this.Logo.Click += new System.EventHandler(this.Logo_Click);
             // 
             // Form2
             // 
@@ -178,12 +198,13 @@ namespace airline_reservation_system
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(178)))), ((int)(((byte)(235)))));
             this.ClientSize = new System.Drawing.Size(877, 459);
-            this.ControlBox = false;
             this.Controls.Add(this.MenuPanel);
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.MenuPanel.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -197,5 +218,6 @@ namespace airline_reservation_system
         private FontAwesome.Sharp.IconButton ViewRes;
         private FontAwesome.Sharp.IconButton CancelRes;
         private FontAwesome.Sharp.IconButton RescheduleRes;
+        private System.Windows.Forms.PictureBox Logo;
     }
 }
