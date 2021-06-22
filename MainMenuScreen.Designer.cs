@@ -29,6 +29,7 @@ namespace airline_reservation_system
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenuScreen));
             this.MenuPanel = new System.Windows.Forms.Panel();
             this.LogOut = new FontAwesome.Sharp.IconButton();
             this.ViewRes = new FontAwesome.Sharp.IconButton();
@@ -320,6 +321,7 @@ namespace airline_reservation_system
             this.Controls.Add(this.panelShadow);
             this.Controls.Add(this.panelTitleBox);
             this.Controls.Add(this.MenuPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainMenuScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Airline Reservation System";
