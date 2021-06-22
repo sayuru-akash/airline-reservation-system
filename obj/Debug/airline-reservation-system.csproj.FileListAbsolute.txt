@@ -8,6 +8,10 @@ C:\Users\sayur\Documents\GitHub\airline-reservation-system\obj\Debug\airline-res
 C:\Users\sayur\Documents\GitHub\airline-reservation-system\obj\Debug\airline-reservation-system.exe
 C:\Users\sayur\Documents\GitHub\airline-reservation-system\obj\Debug\airline-reservation-system.pdb
 C:\Users\sayur\Documents\GitHub\airline-reservation-system\bin\Debug\FontAwesome.Sharp.dll
-C:\Users\sayur\Documents\GitHub\airline-reservation-system\obj\Debug\airline_reservation_system.Form1.resources
 C:\Users\sayur\Documents\GitHub\airline-reservation-system\obj\Debug\airline-reservation-system.csproj.CopyComplete
-C:\Users\sayur\Documents\GitHub\airline-reservation-system\obj\Debug\airline_reservation_system.Form2.resources
+C:\Users\sayur\Documents\GitHub\airline-reservation-system\obj\Debug\airline_reservation_system.LoginScreen.resources
+C:\Users\sayur\Documents\GitHub\airline-reservation-system\obj\Debug\airline_reservation_system.MainMenuScreen.resources
+C:\Users\sayur\Documents\GitHub\airline-reservation-system\obj\Debug\airline_reservation_system.AddResScreen.resources
+C:\Users\sayur\Documents\GitHub\airline-reservation-system\obj\Debug\airline_reservation_system.CancelResScreen.resources
+C:\Users\sayur\Documents\GitHub\airline-reservation-system\obj\Debug\airline_reservation_system.RescheduleResScreen.resources
+C:\Users\sayur\Documents\GitHub\airline-reservation-system\obj\Debug\airline_reservation_system.ViewResScreen.resources
