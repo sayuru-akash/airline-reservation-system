@@ -76,6 +76,7 @@ namespace airline_reservation_system
             this.seatNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.seatNumber.DropDownHeight = 50;
+            this.seatNumber.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.seatNumber.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.seatNumber.FormattingEnabled = true;
             this.seatNumber.IntegralHeight = false;

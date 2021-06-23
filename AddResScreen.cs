@@ -41,7 +41,7 @@ namespace airline_reservation_system
 
         private void submitButton_Click(object sender, EventArgs e)
         {
-            if(textBoxName.Text!="" && textBoxPassport.Text!="" && destinationList.Text!="" && ticketType.Text!="" && seatNumber.Text!="")
+            if(textBoxName.Text!="" && textBoxPassport.Text!="" && destinationList.Text!="" && ticketType.Text!="" && seatNumber.Text!="" && (checkBoxClassA.CheckState==CheckState.Checked || checkBoxClassB.CheckState == CheckState.Checked || checkBoxClassC.CheckState == CheckState.Checked))
             {
                 string name = textBoxName.Text;
                 int pNumber = int.Parse(textBoxPassport.Text);
@@ -62,7 +62,7 @@ namespace airline_reservation_system
                 {
                     tClass = "C";
                 }
-                if(checkSeatTaken(date, sNumber) == 0)
+                if(checkSeatTaken(date, sNumber, destination, tClass) == 0)
                 {
                     MessageBox.Show("Sorry, The expected seat is already reserved on that day!");
                 }
@@ -113,10 +113,10 @@ namespace airline_reservation_system
             
         }
 
-        private int checkSeatTaken(string rDate, string sNum)
+        private int checkSeatTaken(string rDate, string sNum, string dest, string tClass)
         {
             SqlConnection connection = new SqlConnection(connectionString);
-            string query = "SELECT COUNT(*) FROM ReservationTable WHERE Date= '"+rDate+"' AND SeatNumber= '"+sNum+"'";
+            string query = "SELECT COUNT(*) FROM ReservationTable WHERE Destination= '"+dest+"' AND Date= '"+rDate+"' AND TicketClass= '"+tClass+"' AND SeatNumber= '"+sNum+"'";
             SqlCommand command = new SqlCommand(query, connection);
             connection.Open();
             int reservationExist = (int)command.ExecuteScalar();

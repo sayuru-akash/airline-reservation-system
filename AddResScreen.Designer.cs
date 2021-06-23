@@ -196,6 +196,7 @@ namespace airline_reservation_system
             this.destinationList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.destinationList.DropDownHeight = 50;
+            this.destinationList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.destinationList.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.destinationList.FormattingEnabled = true;
             this.destinationList.IntegralHeight = false;
@@ -417,6 +418,7 @@ namespace airline_reservation_system
             this.seatNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.seatNumber.DropDownHeight = 50;
+            this.seatNumber.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.seatNumber.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.seatNumber.FormattingEnabled = true;
             this.seatNumber.IntegralHeight = false;
@@ -477,6 +479,7 @@ namespace airline_reservation_system
             this.ticketType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ticketType.DropDownHeight = 50;
+            this.ticketType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ticketType.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ticketType.FormattingEnabled = true;
             this.ticketType.IntegralHeight = false;
