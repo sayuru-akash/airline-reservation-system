@@ -73,23 +73,48 @@ namespace airline_reservation_system
 
             if (textBoxRID.Text != "" && seatNumber.Text != "")
             {
-                try
+                if (checkSeatTaken(date, sNumber) == 0)
                 {
-                    SqlConnection connection = new SqlConnection(connectionString);
-                    string query2 = @"UPDATE ReservationTable SET Date = '"+date+"', SeatNumber= '"+sNumber+"' WHERE ReservationID = '"+reservationID+"'";
-                    SqlCommand command = new SqlCommand(query2, connection);
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Reservation Reschedule Success!");
+                    MessageBox.Show("Sorry, The expected seat is already reserved on that day!");
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Reservation Reschedule Error!" + ex);
+                    try
+                    {
+                        SqlConnection connection = new SqlConnection(connectionString);
+                        string query2 = @"UPDATE ReservationTable SET Date = '" + date + "', SeatNumber= '" + sNumber + "' WHERE ReservationID = '" + reservationID + "'";
+                        SqlCommand command = new SqlCommand(query2, connection);
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Reservation Reschedule Success!");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Reservation Reschedule Error!" + ex);
+                    }
                 }
             }
             else
             {
                 MessageBox.Show("Enter all required information!");
+            }
+        }
+
+        private int checkSeatTaken(string rDate, string sNum)
+        {
+            SqlConnection connection = new SqlConnection(connectionString);
+            string query = "SELECT COUNT(*) FROM ReservationTable WHERE Date= '" + rDate + "' AND SeatNumber= '" + sNum + "'";
+            SqlCommand command = new SqlCommand(query, connection);
+            connection.Open();
+            int reservationExist = (int)command.ExecuteScalar();
+
+            if (reservationExist > 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return 1;
             }
         }
     }
