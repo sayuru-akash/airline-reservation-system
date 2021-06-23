@@ -62,42 +62,48 @@ namespace airline_reservation_system
                 {
                     tClass = "C";
                 }
-
-                try
+                if(checkSeatTaken(date, sNumber) == 0)
                 {
-                    SqlConnection connection = new SqlConnection(connectionString);
-                    string query = "INSERT INTO ReservationTable (Name, PassportID, Destination, Date, TicketClass, TicketType, SeatNumber) VALUES ('" + name+ "','" + pNumber + "','" + destination + "','" + date + "','" + tClass + "','" + tType + "','" + sNumber + "')";
-                    SqlCommand command = new SqlCommand(query, connection);
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                    int reservationNum;
-                    string query2 = "SELECT MAX(ReservationID) FROM ReservationTable";
-                    using (SqlCommand command2 = new SqlCommand(query2, connection))
+                    MessageBox.Show("Sorry, The expected seat is already reserved on that day!");
+                }
+                else
+                {
+                    try
                     {
-                        using (SqlDataReader reader = command2.ExecuteReader())
+                        SqlConnection connection = new SqlConnection(connectionString);
+                        string query = "INSERT INTO ReservationTable (Name, PassportID, Destination, Date, TicketClass, TicketType, SeatNumber) VALUES ('" + name + "','" + pNumber + "','" + destination + "','" + date + "','" + tClass + "','" + tType + "','" + sNumber + "')";
+                        SqlCommand command = new SqlCommand(query, connection);
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                        int reservationNum;
+                        string query2 = "SELECT MAX(ReservationID) FROM ReservationTable";
+                        using (SqlCommand command2 = new SqlCommand(query2, connection))
                         {
-                           reader.Read();
-                           reservationNum = reader.GetInt32(0);
-                           reader.Close();
+                            using (SqlDataReader reader = command2.ExecuteReader())
+                            {
+                                reader.Read();
+                                reservationNum = reader.GetInt32(0);
+                                reader.Close();
+                            }
                         }
+                        MessageBox.Show("Reservation made successfully! Your Reservation Number is " + reservationNum);
+                        connection.Close();
                     }
-                    MessageBox.Show("Reservation made successfully! Your Reservation Number is " + reservationNum);
-                    connection.Close();
-                }
-                catch(Exception ex)
-                {
-                    MessageBox.Show("Error making reservation!" + ex);
-                }
-                finally
-                {
-                    textBoxName.Text = "";
-                    textBoxPassport.Text = "";
-                    destinationList.Text = "";
-                    ticketType.Text = "";
-                    seatNumber.Text = "";
-                    checkBoxClassA.CheckState = CheckState.Unchecked;
-                    checkBoxClassB.CheckState = CheckState.Unchecked;
-                    checkBoxClassC.CheckState = CheckState.Unchecked;
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error making reservation!" + ex);
+                    }
+                    finally
+                    {
+                        textBoxName.Text = "";
+                        textBoxPassport.Text = "";
+                        destinationList.Text = "";
+                        ticketType.Text = "";
+                        seatNumber.Text = "";
+                        checkBoxClassA.CheckState = CheckState.Unchecked;
+                        checkBoxClassB.CheckState = CheckState.Unchecked;
+                        checkBoxClassC.CheckState = CheckState.Unchecked;
+                    }
                 }
             }
             else
@@ -105,6 +111,24 @@ namespace airline_reservation_system
                 MessageBox.Show("Enter all required information!");
             }
             
+        }
+
+        private int checkSeatTaken(string rDate, string sNum)
+        {
+            SqlConnection connection = new SqlConnection(connectionString);
+            string query = "SELECT COUNT(*) FROM ReservationTable WHERE Date= '"+rDate+"' AND SeatNumber= '"+sNum+"'";
+            SqlCommand command = new SqlCommand(query, connection);
+            connection.Open();
+            int reservationExist = (int)command.ExecuteScalar();
+
+            if (reservationExist > 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return 1;
+            }
         }
     }
 }
