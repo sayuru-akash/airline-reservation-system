@@ -74,13 +74,19 @@ namespace airline_reservation_system
             this.searchButton.TabIndex = 20;
             this.searchButton.Text = "Search Reservations";
             this.searchButton.UseVisualStyleBackColor = false;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(30)))), ((int)(((byte)(120)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.dataGridView1.Location = new System.Drawing.Point(20, 115);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(560, 182);
@@ -101,6 +107,7 @@ namespace airline_reservation_system
             this.refreshAllButton.TabIndex = 22;
             this.refreshAllButton.Text = "View All Reservations";
             this.refreshAllButton.UseVisualStyleBackColor = false;
+            this.refreshAllButton.Click += new System.EventHandler(this.refreshAllButton_Click);
             // 
             // ViewResScreen
             // 
