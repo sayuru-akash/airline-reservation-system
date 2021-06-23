@@ -2,7 +2,6 @@ C:\Users\sayur\Documents\GitHub\airline-reservation-system\bin\Release\airline-r
 C:\Users\sayur\Documents\GitHub\airline-reservation-system\bin\Release\airline-reservation-system.exe
 C:\Users\sayur\Documents\GitHub\airline-reservation-system\bin\Release\airline-reservation-system.pdb
 C:\Users\sayur\Documents\GitHub\airline-reservation-system\bin\Release\FontAwesome.Sharp.dll
-C:\Users\sayur\Documents\GitHub\airline-reservation-system\obj\Release\airline-reservation-system.csprojAssemblyReference.cache
 C:\Users\sayur\Documents\GitHub\airline-reservation-system\obj\Release\airline_reservation_system.AddResScreen.resources
 C:\Users\sayur\Documents\GitHub\airline-reservation-system\obj\Release\airline_reservation_system.CancelResScreen.resources
 C:\Users\sayur\Documents\GitHub\airline-reservation-system\obj\Release\airline_reservation_system.LoginScreen.resources

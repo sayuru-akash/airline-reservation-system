@@ -27,7 +27,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_3862DBC28EB74C37BE2521702E56B011"
+        "MsmKey" = "8:_917AF5A425AA4CF2942AD7CBC3B2E6C7"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -40,12 +40,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_0AE11F1F3F2279E981F31EFC603E88BF"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_A829B270FD054993AC40197FE6B952B3"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -53,6 +47,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_0C6D8DAA0613797A1C8DB9A98C019884"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_0AE11F1F3F2279E981F31EFC603E88BF"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -100,7 +100,7 @@
         "DisplayName" = "8:Release"
         "IsDebugOnly" = "11:FALSE"
         "IsReleaseOnly" = "11:TRUE"
-        "OutputFilename" = "8:Release\\Airline Reservation System Setup.msi"
+        "OutputFilename" = "8:Release\\Airline Reservation System.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -124,10 +124,10 @@
                     "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
                     "ProductCode" = "8:.NETFramework,Version=v4.7.2"
                     }
-                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.SqlServer.SqlLocalDB.13.2"
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.SqlServer.SqlLocalDB.15.0"
                     {
-                    "Name" = "8:SQL Server 2016 Express LocalDB"
-                    "ProductCode" = "8:Microsoft.SqlServer.SqlLocalDB.13.2"
+                    "Name" = "8:SQL Server 2019 Express LocalDB"
+                    "ProductCode" = "8:Microsoft.SqlServer.SqlLocalDB.15.0"
                     }
                 }
             }
@@ -222,9 +222,9 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3862DBC28EB74C37BE2521702E56B011"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_917AF5A425AA4CF2942AD7CBC3B2E6C7"
             {
-            "SourcePath" = "8:..\\airline-reservation-system\\aero.ico"
+            "SourcePath" = "8:..\\aero.ico"
             "TargetName" = "8:aero.ico"
             "Tag" = "8:"
             "Folder" = "8:_3397D71F85FD4F80A4E10FE0C6324AE9"
@@ -250,7 +250,7 @@
         {
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_3397D71F85FD4F80A4E10FE0C6324AE9"
             {
-            "DefaultLocation" = "8:[ProgramFiles64Folder][Manufacturer]\\[ProductName]"
+            "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -303,16 +303,16 @@
         "UpgradeCode" = "8:{6BE1AEB5-5C52-4657-BE62-4F555FF9F7D4}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
-        "RemovePreviousVersions" = "11:FALSE"
+        "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:S A K Amarasinghe"
+        "Manufacturer" = "8:S A K"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:https://github.com/sayuru-akash/airline-reservation-system"
         "Title" = "8:Airline Reservation System Setup"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:S A K Amarasinghe"
+        "ARPCONTACT" = "8:S A K"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
@@ -320,7 +320,7 @@
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
-        "TargetPlatform" = "3:1"
+        "TargetPlatform" = "3:0"
         "PreBuildEvent" = "8:"
         "PostBuildEvent" = "8:"
         "RunPostBuildEvent" = "3:0"
@@ -430,7 +430,7 @@
             "Target" = "8:_A829B270FD054993AC40197FE6B952B3"
             "Folder" = "8:_CD107A26A54F4F6798F1B696FA07A2BD"
             "WorkingFolder" = "8:_3397D71F85FD4F80A4E10FE0C6324AE9"
-            "Icon" = "8:_3862DBC28EB74C37BE2521702E56B011"
+            "Icon" = "8:_917AF5A425AA4CF2942AD7CBC3B2E6C7"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_ACE889F0B4494729BD23D5C0C610AD57"
@@ -444,7 +444,7 @@
             "Target" = "8:_A829B270FD054993AC40197FE6B952B3"
             "Folder" = "8:_E92D0D4EBBD846FF9E9A962CC76FDD24"
             "WorkingFolder" = "8:_3397D71F85FD4F80A4E10FE0C6324AE9"
-            "Icon" = "8:_3862DBC28EB74C37BE2521702E56B011"
+            "Icon" = "8:_917AF5A425AA4CF2942AD7CBC3B2E6C7"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_CA7A71D507A742DE8C99D12EFABE66E7"
@@ -458,7 +458,7 @@
             "Target" = "8:_A829B270FD054993AC40197FE6B952B3"
             "Folder" = "8:_3397D71F85FD4F80A4E10FE0C6324AE9"
             "WorkingFolder" = "8:_3397D71F85FD4F80A4E10FE0C6324AE9"
-            "Icon" = "8:_3862DBC28EB74C37BE2521702E56B011"
+            "Icon" = "8:_917AF5A425AA4CF2942AD7CBC3B2E6C7"
             "Feature" = "8:"
             }
         }
@@ -890,7 +890,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_A829B270FD054993AC40197FE6B952B3"
             {
-            "SourcePath" = "8:..\\airline-reservation-system\\obj\\Debug\\airline-reservation-system.exe"
+            "SourcePath" = "8:..\\obj\\Release\\airline-reservation-system.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_3397D71F85FD4F80A4E10FE0C6324AE9"
