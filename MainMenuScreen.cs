@@ -124,6 +124,7 @@ namespace airline_reservation_system
 
         private void LogOut_Click(object sender, EventArgs e)
         {
+            ActivateBtn(sender, Color.FromArgb(255, 0, 0));
             new LoginScreen().Show();
             this.Hide();
         }
