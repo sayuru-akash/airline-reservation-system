@@ -158,6 +158,7 @@ namespace airline_reservation_system
             this.validateButton.TabIndex = 21;
             this.validateButton.Text = "Validate Reservation";
             this.validateButton.UseVisualStyleBackColor = false;
+            this.validateButton.Click += new System.EventHandler(this.validateButton_Click);
             // 
             // updateButton
             // 
@@ -174,6 +175,7 @@ namespace airline_reservation_system
             this.updateButton.TabIndex = 22;
             this.updateButton.Text = "Update Reservation";
             this.updateButton.UseVisualStyleBackColor = false;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // RescheduleResScreen
             // 
