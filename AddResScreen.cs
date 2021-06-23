@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace airline_reservation_system
 {
@@ -16,6 +17,9 @@ namespace airline_reservation_system
         {
             InitializeComponent();
         }
+
+        private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\sayur\Documents\GitHub\airline-reservation-system\Database\ReservationDb.mdf;Integrated Security=True;Connect Timeout=30";
+        
 
         private void checkBoxClassA_Clicked(object sender, EventArgs e)
         {
@@ -39,10 +43,10 @@ namespace airline_reservation_system
         {
             if(textBoxName.Text!="" && textBoxPassport.Text!="" && destinationList.Text!="" && ticketType.Text!="" && seatNumber.Text!="")
             {
-                string name = textBoxName.Text;
+                var name = textBoxName.Text;
                 int pNumber = int.Parse(textBoxPassport.Text);
-                string destination = destinationList.Text;
-                DateTime date = datePicker.Value;
+                var destination = destinationList.Text;
+                var date = datePicker.Value.ToShortDateString();
                 string tClass = "";
                 string tType = ticketType.Text;
                 string sNumber = seatNumber.Text;
@@ -57,6 +61,31 @@ namespace airline_reservation_system
                 else if (checkBoxClassC.Checked)
                 {
                     tClass = "C";
+                }
+
+                try
+                {
+                    SqlConnection connection = new SqlConnection(connectionString);
+                    string query = "INSERT INTO AirlineReservationTable (Name, PassportID, Destination, Date, TicketClass, TicketType, SeatNumber) VALUES ('" + name+ "','" + pNumber + "','" + destination + "','" + date + "','" + tClass + "','" + tType + "','" + sNumber + "')";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Reservation made successfully!");
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Error making reservation!" + ex);
+                }
+                finally
+                {
+                    textBoxName.Text = "";
+                    textBoxPassport.Text = "";
+                    destinationList.Text = "";
+                    ticketType.Text = "";
+                    seatNumber.Text = "";
+                    checkBoxClassA.CheckState = CheckState.Unchecked;
+                    checkBoxClassB.CheckState = CheckState.Unchecked;
+                    checkBoxClassC.CheckState = CheckState.Unchecked;
                 }
             }
             else
