@@ -62,7 +62,7 @@ namespace airline_reservation_system
                 {
                     tClass = "C";
                 }
-                if(checkSeatTaken(date, sNumber, destination, tClass) == 0)
+                if(checkSeatTaken(date, sNumber) == 0)
                 {
                     MessageBox.Show("Sorry, The expected seat is already reserved on that day!");
                 }
@@ -113,10 +113,10 @@ namespace airline_reservation_system
             
         }
 
-        private int checkSeatTaken(string rDate, string sNum, string dest, string tClass)
+        private int checkSeatTaken(string rDate, string sNum)
         {
             SqlConnection connection = new SqlConnection(connectionString);
-            string query = "SELECT COUNT(*) FROM ReservationTable WHERE Destination= '"+dest+"' AND Date= '"+rDate+"' AND TicketClass= '"+tClass+"' AND SeatNumber= '"+sNum+"'";
+            string query = "SELECT COUNT(*) FROM ReservationTable WHERE Date= '"+rDate+"' AND SeatNumber= '"+sNum+"'";
             SqlCommand command = new SqlCommand(query, connection);
             connection.Open();
             int reservationExist = (int)command.ExecuteScalar();
