@@ -503,6 +503,7 @@ namespace airline_reservation_system
             this.submitButton.TabIndex = 18;
             this.submitButton.Text = "Submit Reservation";
             this.submitButton.UseVisualStyleBackColor = false;
+            this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
             // AddResScreen
             // 

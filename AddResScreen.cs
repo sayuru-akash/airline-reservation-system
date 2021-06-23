@@ -34,5 +34,37 @@ namespace airline_reservation_system
             checkBoxClassA.CheckState = CheckState.Unchecked;
             checkBoxClassB.CheckState = CheckState.Unchecked;
         }
+
+        private void submitButton_Click(object sender, EventArgs e)
+        {
+            if(textBoxName.Text!="" && textBoxPassport.Text!="" && destinationList.Text!="" && ticketType.Text!="" && seatNumber.Text!="")
+            {
+                string name = textBoxName.Text;
+                int pNumber = int.Parse(textBoxPassport.Text);
+                string destination = destinationList.Text;
+                DateTime date = datePicker.Value;
+                string tClass = "";
+                string tType = ticketType.Text;
+                string sNumber = seatNumber.Text;
+                if (checkBoxClassA.Checked)
+                {
+                    tClass = "A";
+                }
+                else if (checkBoxClassB.Checked)
+                {
+                    tClass = "B";
+                }
+                else if (checkBoxClassC.Checked)
+                {
+                    tClass = "C";
+                }
+                MessageBox.Show(tClass);
+            }
+            else
+            {
+                MessageBox.Show("Enter all required information!");
+            }
+            
+        }
     }
 }
