@@ -31,12 +31,12 @@ namespace airline_reservation_system
                 if(textBoxRID.Text != "" && textBoxPassport.Text != "")
                 {
                     int reservationId = int.Parse(textBoxRID.Text);
-                    int passportId = Int32.Parse(textBoxPassport.Text);
+                    int passportId = int.Parse(textBoxPassport.Text);
 
                     try
                     {
                         SqlConnection connection = new SqlConnection(connectionString);
-                        string query = @"DELETE FROM ReservationTable WHERE (ReservationID= '"+ reservationId + "' AND PassportID= '"+ passportId+"')";
+                        string query = @"DELETE FROM ReservationTable WHERE (ReservationID= '" + reservationId + "' AND PassportID= '" + passportId + "')";
                         SqlCommand command = new SqlCommand(query, connection);
                         connection.Open();
                         command.ExecuteNonQuery();
@@ -46,6 +46,12 @@ namespace airline_reservation_system
                     catch(Exception ex)
                     {
                         MessageBox.Show("Reservation not found!" + ex);
+                    }
+                    finally
+                    {
+                        textBoxRID.Text = "";
+                        textBoxPassport.Text = "";
+                        checkBoxAgree.CheckState = CheckState.Unchecked;
                     }
                 }
                 else
