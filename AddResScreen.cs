@@ -58,7 +58,6 @@ namespace airline_reservation_system
                 {
                     tClass = "C";
                 }
-                MessageBox.Show(tClass);
             }
             else
             {
