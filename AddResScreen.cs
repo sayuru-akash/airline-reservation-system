@@ -43,10 +43,10 @@ namespace airline_reservation_system
         {
             if(textBoxName.Text!="" && textBoxPassport.Text!="" && destinationList.Text!="" && ticketType.Text!="" && seatNumber.Text!="")
             {
-                var name = textBoxName.Text;
+                string name = textBoxName.Text;
                 int pNumber = int.Parse(textBoxPassport.Text);
-                var destination = destinationList.Text;
-                var date = datePicker.Value.ToShortDateString();
+                string destination = destinationList.Text;
+                string date = datePicker.Value.ToShortDateString();
                 string tClass = "";
                 string tType = ticketType.Text;
                 string sNumber = seatNumber.Text;
@@ -66,11 +66,23 @@ namespace airline_reservation_system
                 try
                 {
                     SqlConnection connection = new SqlConnection(connectionString);
-                    string query = "INSERT INTO AirlineReservationTable (Name, PassportID, Destination, Date, TicketClass, TicketType, SeatNumber) VALUES ('" + name+ "','" + pNumber + "','" + destination + "','" + date + "','" + tClass + "','" + tType + "','" + sNumber + "')";
+                    string query = "INSERT INTO ReservationTable (Name, PassportID, Destination, Date, TicketClass, TicketType, SeatNumber) VALUES ('" + name+ "','" + pNumber + "','" + destination + "','" + date + "','" + tClass + "','" + tType + "','" + sNumber + "')";
                     SqlCommand command = new SqlCommand(query, connection);
                     connection.Open();
                     command.ExecuteNonQuery();
-                    MessageBox.Show("Reservation made successfully!");
+                    int reservationNum;
+                    string query2 = "SELECT MAX(ReservationID) FROM ReservationTable";
+                    using (SqlCommand command2 = new SqlCommand(query2, connection))
+                    {
+                        using (SqlDataReader reader = command2.ExecuteReader())
+                        {
+                           reader.Read();
+                           reservationNum = reader.GetInt32(0);
+                           reader.Close();
+                        }
+                    }
+                    MessageBox.Show("Reservation made successfully! Your Reservation Number is " + reservationNum);
+                    connection.Close();
                 }
                 catch(Exception ex)
                 {
