@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
@@ -19,13 +13,13 @@ namespace airline_reservation_system
             loadDataGrid();
         }
 
-        private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\sayur\Documents\GitHub\airline-reservation-system\Database\ReservationDb.mdf;Integrated Security=True;Connect Timeout=30";
-
         private void loadDataGrid()
         {
             try
             {
-                SqlConnection connection = new SqlConnection(connectionString);
+                FunctionsClass functions = new FunctionsClass();
+
+                SqlConnection connection = new SqlConnection(functions.connectionString);
                 connection.Open();
 
                 string query = "SELECT * FROM ReservationTable";
@@ -50,9 +44,11 @@ namespace airline_reservation_system
             {
                 int pNumber = int.Parse(textBoxPassport.Text);
 
+                FunctionsClass functions = new FunctionsClass();
+
                 try
                 {
-                    SqlConnection connection = new SqlConnection(connectionString);
+                    SqlConnection connection = new SqlConnection(functions.connectionString);
                     connection.Open();
 
                     string query2 = "SELECT * FROM ReservationTable WHERE PassportID='" + pNumber + "'";

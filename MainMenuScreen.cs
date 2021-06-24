@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 
@@ -23,6 +17,15 @@ namespace airline_reservation_system
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 70);
             MenuPanel.Controls.Add(leftBorderBtn);
+        }
+
+        private struct RGBColors
+        {
+            public static Color color1 = Color.FromArgb(113, 201, 245);
+            public static Color color2 = Color.FromArgb(255, 230, 0);
+            public static Color color3 = Color.FromArgb(214, 15, 38);
+            public static Color color4 = Color.FromArgb(242, 158, 56);
+            public static Color color5 = Color.FromArgb(255, 0, 0);
         }
 
         private void ActivateBtn (object senderBtn, Color color)
@@ -85,25 +88,25 @@ namespace airline_reservation_system
 
         private void AddRes_Click(object sender, EventArgs e)
         {
-            ActivateBtn(sender, Color.FromArgb(113, 201, 245));
+            ActivateBtn(sender, RGBColors.color1);
             OpenChildForm(new AddResScreen());
         }
 
         private void RescheduleRes_Click(object sender, EventArgs e)
         {
-            ActivateBtn(sender, Color.FromArgb(255, 230, 0));
+            ActivateBtn(sender, RGBColors.color2);
             OpenChildForm(new RescheduleResScreen());
         }
 
         private void CancelRes_Click(object sender, EventArgs e)
         {
-            ActivateBtn(sender, Color.FromArgb(214, 15, 38));
+            ActivateBtn(sender, RGBColors.color3);
             OpenChildForm(new CancelResScreen());
         }
 
         private void ViewRes_Click(object sender, EventArgs e)
         {
-            ActivateBtn(sender, Color.FromArgb(242, 158, 56));
+            ActivateBtn(sender, RGBColors.color4);
             OpenChildForm(new ViewResScreen());
         }
 
@@ -124,7 +127,7 @@ namespace airline_reservation_system
 
         private void LogOut_Click(object sender, EventArgs e)
         {
-            ActivateBtn(sender, Color.FromArgb(255, 0, 0));
+            ActivateBtn(sender, RGBColors.color5);
             new LoginScreen().Show();
             this.Hide();
         }

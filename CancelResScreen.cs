@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
@@ -17,8 +10,6 @@ namespace airline_reservation_system
         {
             InitializeComponent();
         }
-
-        private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\sayur\Documents\GitHub\airline-reservation-system\Database\ReservationDb.mdf;Integrated Security=True;Connect Timeout=30";
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
@@ -33,9 +24,11 @@ namespace airline_reservation_system
                     int reservationId = int.Parse(textBoxRID.Text);
                     int passportId = int.Parse(textBoxPassport.Text);
 
+                    FunctionsClass functions = new FunctionsClass();
+
                     try
                     {
-                        SqlConnection connection = new SqlConnection(connectionString);
+                        SqlConnection connection = new SqlConnection(functions.connectionString);
                         string query = @"DELETE FROM ReservationTable WHERE (ReservationID= '" + reservationId + "' AND PassportID= '" + passportId + "')";
                         SqlCommand command = new SqlCommand(query, connection);
                         connection.Open();

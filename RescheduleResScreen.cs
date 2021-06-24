@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
@@ -18,7 +11,6 @@ namespace airline_reservation_system
             InitializeComponent();
         }
 
-        private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\sayur\Documents\GitHub\airline-reservation-system\Database\ReservationDb.mdf;Integrated Security=True;Connect Timeout=30";
 
         private void validateButton_Click(object sender, EventArgs e)
         {
@@ -26,10 +18,11 @@ namespace airline_reservation_system
             {
                 int reservationID = int.Parse(textBoxRID.Text);
                 int reservationNum = 0;
+                FunctionsClass functions = new FunctionsClass();
 
                 try
                 {
-                    SqlConnection connection = new SqlConnection(connectionString);
+                    SqlConnection connection = new SqlConnection(functions.connectionString);
                     connection.Open();
                     string query1 = @"SELECT ReservationID FROM ReservationTable WHERE ReservationID LIKE '" + reservationID + "'";
                     try
@@ -71,9 +64,11 @@ namespace airline_reservation_system
             string sNumber = seatNumber.Text;
             string date = datePicker.Value.ToShortDateString();
 
+            FunctionsClass functions = new FunctionsClass();
+
             if (textBoxRID.Text != "" && seatNumber.Text != "")
             {
-                if (checkSeatTaken(date, sNumber) == 0)
+                if (functions.checkSeatTaken(date, sNumber) == 0)
                 {
                     MessageBox.Show("Sorry, The expected seat is already reserved on that day!");
                 }
@@ -81,7 +76,7 @@ namespace airline_reservation_system
                 {
                     try
                     {
-                        SqlConnection connection = new SqlConnection(connectionString);
+                        SqlConnection connection = new SqlConnection(functions.connectionString);
                         string query2 = @"UPDATE ReservationTable SET Date = '" + date + "', SeatNumber= '" + sNumber + "' WHERE ReservationID = '" + reservationID + "'";
                         SqlCommand command = new SqlCommand(query2, connection);
                         connection.Open();
@@ -97,24 +92,6 @@ namespace airline_reservation_system
             else
             {
                 MessageBox.Show("Enter all required information!");
-            }
-        }
-
-        private int checkSeatTaken(string rDate, string sNum)
-        {
-            SqlConnection connection = new SqlConnection(connectionString);
-            string query = "SELECT COUNT(*) FROM ReservationTable WHERE Date= '" + rDate + "' AND SeatNumber= '" + sNum + "'";
-            SqlCommand command = new SqlCommand(query, connection);
-            connection.Open();
-            int reservationExist = (int)command.ExecuteScalar();
-
-            if (reservationExist > 0)
-            {
-                return 0;
-            }
-            else
-            {
-                return 1;
             }
         }
     }
