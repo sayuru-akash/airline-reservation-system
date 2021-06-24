@@ -38,23 +38,23 @@ namespace airline_reservation_system
                         }
                         if (reservationNum != 0)
                         {
-                            MessageBox.Show("Reservation Validated Successfully!");
+                            new PopupMessage("Reservation Validated Successfully!").ShowDialog();
                         }
                         connection.Close();
                     }
                     catch
                     {
-                        MessageBox.Show("Reservation is invalid!");
+                        new PopupMessage("Reservation is invalid!").ShowDialog();
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Validation error! " + ex);
+                    new PopupMessage("Validation Error!" + ex).ShowDialog();
                 }
             }
             else
             {
-                MessageBox.Show("Enter Reservation ID!");
+                new PopupMessage("Enter Reservation ID!").ShowDialog();
             }
         }
 
@@ -70,7 +70,7 @@ namespace airline_reservation_system
             {
                 if (functions.checkSeatTaken(date, sNumber) == 0)
                 {
-                    MessageBox.Show("Sorry, The expected seat is already reserved on that day!");
+                    new PopupMessage("Sorry, The expected seat is already reserved on that day!").ShowDialog();
                 }
                 else
                 {
@@ -81,17 +81,17 @@ namespace airline_reservation_system
                         SqlCommand command = new SqlCommand(query2, connection);
                         connection.Open();
                         command.ExecuteNonQuery();
-                        MessageBox.Show("Reservation Reschedule Success!");
+                        new PopupMessage("Reservation Reschedule Success!").ShowDialog();
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Reservation Reschedule Error!" + ex);
+                        new PopupMessage("Reservation Reschedule Error!" + ex).ShowDialog();
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Enter all required information!");
+                new PopupMessage("Enter all required information!").ShowDialog();
             }
         }
     }

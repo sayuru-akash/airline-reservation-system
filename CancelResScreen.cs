@@ -15,7 +15,7 @@ namespace airline_reservation_system
         {
             if (checkBoxAgree.CheckState == CheckState.Unchecked)
             {
-                MessageBox.Show("Please agree you understand that you can not reverse this cancellation");
+                new PopupMessage("Please agree you understand that you can not reverse this cancellation").ShowDialog();
             }
             else
             {
@@ -33,12 +33,12 @@ namespace airline_reservation_system
                         SqlCommand command = new SqlCommand(query, connection);
                         connection.Open();
                         command.ExecuteNonQuery();
-                        MessageBox.Show("Reservation Cancellation Success!");
+                        new PopupMessage("Reservation Cancellation Success!").ShowDialog();
                         connection.Close();
                     }
                     catch(Exception ex)
                     {
-                        MessageBox.Show("Reservation not found!" + ex);
+                        new PopupMessage("Reservation not found!" + ex).ShowDialog();
                     }
                     finally
                     {
@@ -49,7 +49,7 @@ namespace airline_reservation_system
                 }
                 else
                 {
-                    MessageBox.Show("Please input all required details!");
+                    new PopupMessage("Please input all required details!").ShowDialog();
                 }
             }
         }

@@ -34,7 +34,7 @@ namespace airline_reservation_system
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Data fetch unsuccessful" + ex);
+                new PopupMessage("Data fetch unsuccessful" + ex).ShowDialog();
             }
         }
 
@@ -63,7 +63,7 @@ namespace airline_reservation_system
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show("Search unsuccessful!" + ex);
+                    new PopupMessage("Search unsuccessful!" + ex).ShowDialog();
                 }
                 finally
                 {
@@ -72,7 +72,7 @@ namespace airline_reservation_system
             }
             else
             {
-                MessageBox.Show("Enter passport number!");
+                new PopupMessage("Enter passport number!").ShowDialog();
             }
         }
 

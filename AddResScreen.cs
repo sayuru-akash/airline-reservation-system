@@ -57,7 +57,7 @@ namespace airline_reservation_system
 
                 if(functions.checkSeatTaken(date, sNumber) == 0)
                 {
-                    MessageBox.Show("Sorry, The expected seat is already reserved on that day!");
+                    new PopupMessage("Sorry, The expected seat is already reserved on that day!").ShowDialog();
                 }
                 else
                 {
@@ -79,12 +79,12 @@ namespace airline_reservation_system
                                 reader.Close();
                             }
                         }
-                        MessageBox.Show("Reservation made successfully! Your Reservation Number is " + reservationNum);
+                        new PopupMessage("Reservation made successfully! Your Reservation Number is " + reservationNum).ShowDialog();
                         connection.Close();
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error making reservation!" + ex);
+                        new PopupMessage("Error making reservation!" + ex).ShowDialog();
                     }
                     finally
                     {
@@ -101,11 +101,8 @@ namespace airline_reservation_system
             }
             else
             {
-                MessageBox.Show("Enter all required information!");
+                new PopupMessage("Enter all required information!").ShowDialog();
             }
-            
         }
-
-        
     }
 }

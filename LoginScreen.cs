@@ -15,16 +15,17 @@ namespace airline_reservation_system
             if (txtUsername.Text=="admin"&&txtPassword.Text=="password")
             {
                 new MainMenuScreen().Show();
+                new PopupMessage("Log In Success!").ShowDialog();
                 this.Hide();
             }
             else if (txtUsername.Text == "" || txtPassword.Text == "")
             {
-                MessageBox.Show("Enter Credentials!");
+                new PopupMessage("Enter Credentials!").ShowDialog();
                 txtPassword.Text = "";
             }
             else
             {
-                MessageBox.Show("Invalid Credentials!");
+                new PopupMessage("Invalid Credentials!").ShowDialog();
                 txtUsername.Text = "";
                 txtPassword.Text = "";
                 txtUsername.Focus();
