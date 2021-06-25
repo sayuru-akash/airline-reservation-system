@@ -77,6 +77,12 @@
     <Compile Include="MainMenuScreen.Designer.cs">
       <DependentUpon>MainMenuScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewUserScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewUserScreen.Designer.cs">
+      <DependentUpon>NewUserScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopupMessage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,12 @@
     </Compile>
     <Compile Include="RescheduleResScreen.Designer.cs">
       <DependentUpon>RescheduleResScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserMenuScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserMenuScreen.Designer.cs">
+      <DependentUpon>UserMenuScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewResScreen.cs">
       <SubType>Form</SubType>
@@ -109,6 +121,9 @@
     <EmbeddedResource Include="MainMenuScreen.resx">
       <DependentUpon>MainMenuScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewUserScreen.resx">
+      <DependentUpon>NewUserScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PopupMessage.resx">
       <DependentUpon>PopupMessage.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,6 +139,9 @@
     </Compile>
     <EmbeddedResource Include="RescheduleResScreen.resx">
       <DependentUpon>RescheduleResScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserMenuScreen.resx">
+      <DependentUpon>UserMenuScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewResScreen.resx">
       <DependentUpon>ViewResScreen.cs</DependentUpon>

@@ -17,3 +17,5 @@ C:\Users\sayur\Documents\GitHub\airline-reservation-system\obj\Debug\airline_res
 C:\Users\sayur\Documents\GitHub\airline-reservation-system\obj\Debug\airline-reservation-system.csproj.AssemblyReference.cache
 C:\Users\sayur\Documents\GitHub\airline-reservation-system\obj\Debug\airline_reservation_system.PopupMessage.resources
 C:\Users\sayur\Documents\GitHub\airline-reservation-system\bin\Debug\Guna.UI2.dll
+C:\Users\sayur\Documents\GitHub\airline-reservation-system\obj\Debug\airline_reservation_system.NewUserScreen.resources
+C:\Users\sayur\Documents\GitHub\airline-reservation-system\obj\Debug\airline_reservation_system.UserMenuScreen.resources
