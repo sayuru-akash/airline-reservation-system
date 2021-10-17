@@ -34,6 +34,9 @@ namespace airline_reservation_system
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.txtBckToLog = new System.Windows.Forms.Label();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.registerButton = new System.Windows.Forms.Button();
             this.textBoxPassport = new System.Windows.Forms.TextBox();
@@ -42,9 +45,6 @@ namespace airline_reservation_system
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtBckToLog = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -57,9 +57,9 @@ namespace airline_reservation_system
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(346, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(202, 37);
+            this.label1.Size = new System.Drawing.Size(150, 37);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Register Account";
+            this.label1.Text = "Registration";
             // 
             // panel2
             // 
@@ -94,6 +94,41 @@ namespace airline_reservation_system
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(593, 398);
             this.panel4.TabIndex = 37;
+            // 
+            // txtBckToLog
+            // 
+            this.txtBckToLog.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtBckToLog.AutoSize = true;
+            this.txtBckToLog.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBckToLog.ForeColor = System.Drawing.Color.PowderBlue;
+            this.txtBckToLog.Location = new System.Drawing.Point(244, 356);
+            this.txtBckToLog.Name = "txtBckToLog";
+            this.txtBckToLog.Size = new System.Drawing.Size(130, 23);
+            this.txtBckToLog.TabIndex = 44;
+            this.txtBckToLog.Text = "<- BACK TO LOGIN";
+            this.txtBckToLog.Click += new System.EventHandler(this.txtBckToLog_Click);
+            // 
+            // textBoxPassword
+            // 
+            this.textBoxPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxPassword.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPassword.Location = new System.Drawing.Point(174, 187);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '*';
+            this.textBoxPassword.Size = new System.Drawing.Size(404, 24);
+            this.textBoxPassword.TabIndex = 43;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(15, 188);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(79, 23);
+            this.label4.TabIndex = 42;
+            this.label4.Text = "Password:";
             // 
             // textBoxUsername
             // 
@@ -183,41 +218,6 @@ namespace airline_reservation_system
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(893, 100);
             this.panel1.TabIndex = 0;
-            // 
-            // textBoxPassword
-            // 
-            this.textBoxPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxPassword.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPassword.Location = new System.Drawing.Point(174, 187);
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.PasswordChar = '*';
-            this.textBoxPassword.Size = new System.Drawing.Size(404, 24);
-            this.textBoxPassword.TabIndex = 43;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(15, 188);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 23);
-            this.label4.TabIndex = 42;
-            this.label4.Text = "Password:";
-            // 
-            // txtBckToLog
-            // 
-            this.txtBckToLog.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtBckToLog.AutoSize = true;
-            this.txtBckToLog.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBckToLog.ForeColor = System.Drawing.Color.PowderBlue;
-            this.txtBckToLog.Location = new System.Drawing.Point(244, 356);
-            this.txtBckToLog.Name = "txtBckToLog";
-            this.txtBckToLog.Size = new System.Drawing.Size(130, 23);
-            this.txtBckToLog.TabIndex = 44;
-            this.txtBckToLog.Text = "<- BACK TO LOGIN";
-            this.txtBckToLog.Click += new System.EventHandler(this.txtBckToLog_Click);
             // 
             // NewUserScreen
             // 
