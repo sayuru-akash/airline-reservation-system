@@ -19,7 +19,7 @@
 <h3 align="center">Airline Reservation System</h3>
 
   <p align="center">
-    Airline Reservation System built for a University Project using C++ and .NET ASP. This project can run with a server along with a MySQL database.
+    Airline Reservation System built for a University Project using C++ and .NET ASP. This project can run with a server along with a MSSQL database.
     <br />
     <a href="https://github.com/sayuru-akash/airline-reservation-system"><strong>Explore the project »</strong></a>
     <br />
@@ -68,6 +68,7 @@
 
 * [C++]
 * [.NET]
+* [MSSQL]
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
